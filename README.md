@@ -1,6 +1,7 @@
 # Projet_Prob_Obj
 
 ## Installer Python 3.12.x
+Necessaire pour la suite et bien verifir qu'il est pris en compte
 
 ## Installer Visual Studio Build Tools (COMPILATEUR C)
 Installer le minimum :
@@ -25,19 +26,6 @@ python -m venv venv
 Dans le repertoire venv:
 
 pip install numpy cython numba matplotlib
-
-## Arborescence général du projet
-Projet/
- ├── venv/
- ├── python_baseline.py
- ├── tests_numba.py
- ├── plot_results.py
- ├── cython_module/
- │     ├── __init__.py
- │     ├── tests_cython.pyx
- │     ├── setup.py
- │     ├── test_cython_runner.py
- └── rust/
 
 ## Activer l’environnement de compilation C
 Ouvrir "Developer Command Prompt for VS2022"
