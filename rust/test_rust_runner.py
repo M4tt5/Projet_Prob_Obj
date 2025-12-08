@@ -16,5 +16,5 @@ if __name__ == "__main__":
     arr = np.random.rand(N)
 
     print("compute (rust):", bench(compute, N))
-    print("sum_squares (rust):", bench(sum_squares, arr.tolist()))
+    print("sum_squares (rust):", bench(sum_squares, "arr.npy"))
     print("fib (rust):", bench(fib, 30))

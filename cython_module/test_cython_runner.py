@@ -13,7 +13,7 @@ def bench(fn, *args, repeat=5):
 
 if __name__ == "__main__":
     N = 500_000
-    arr = np.random.rand(N)
+    arr = np.load("arr.npy")
 
     print("compute (cython):", bench(compute, N))
     print("sum_squares (cython):", bench(sum_squares, arr))

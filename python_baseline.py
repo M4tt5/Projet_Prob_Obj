@@ -29,7 +29,7 @@ def bench(fn, *args, repeat=5):
 
 if __name__ == "__main__":
     N = 500_000
-    arr = np.random.rand(N)
+    arr = np.load("arr.npy")
 
     print("compute :", bench(compute, N))
     print("sum_squares :", bench(sum_squares, arr))
