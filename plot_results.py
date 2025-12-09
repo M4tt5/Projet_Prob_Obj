@@ -17,7 +17,7 @@ out_numba = run("python tests_numba.py")
 out_cython = run("python cython_module/test_cython_runner.py")
 out_rust = run("python rust/test_rust.py")
 
-PYPY_PATH = r".\pypy3.11-v7.3.20-win64\pypy3.exe"
+PYPY_PATH = r".\pypy3.11\pypy3.exe"
 out_pypy = run(f"\"{PYPY_PATH}\" pypy_runner.py")
 
 # --- Extraction automatique des valeurs ---
