@@ -15,6 +15,9 @@ def run(cmd):
 out_py = run("python python_baseline.py")
 out_numba = run("python tests_numba.py")
 out_cython = run("python cython_module/test_cython_runner.py")
+# --- Ajout PyPy ---
+PYPY_PATH = r"C:\Users\matth\Downloads\pypy3.11-v7.3.20-win64\pypy3.11-v7.3.20-win64\pypy3.exe"
+out_pypy = run(f"\"{PYPY_PATH}\" pypy_runner.py")
 
 # --- Extraction automatique des valeurs ---
 def extract(out):
@@ -34,11 +37,13 @@ def extract(out):
 res_python = extract(out_py)
 res_numba = extract(out_numba)
 res_cython = extract(out_cython)
+res_pypy = extract(out_pypy)
 
 print("\n--- Résultats détectés ---")
 print("Python :", res_python)
 print("Numba  :", res_numba)
 print("Cython :", res_cython)
+print("PyPy   :", res_pypy)
 
 # --- Vérif ---
 if None in res_python.values() or None in res_numba.values() or None in res_cython.values():
@@ -62,7 +67,10 @@ plt.plot(labels, [res_cython[l] for l in labels],
          marker="^", markersize=10, linewidth=2,
          label="Cython")
 
-plt.yscale("log")  # 👈 change tout : séparations visibles même si proches
+plt.plot(labels, [res_pypy[l] for l in labels],
+         marker="D", linewidth=2, label="PyPy")
+
+plt.yscale("log")  # change tout : séparations visibles même si proches
 
 plt.xlabel("Fonction testée")
 plt.ylabel("Temps d'exécution (s) [échelle log]")
