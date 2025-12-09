@@ -16,7 +16,7 @@ out_py = run("python python_baseline.py")
 out_numba = run("python tests_numba.py")
 out_cython = run("python cython_module/test_cython_runner.py")
 # --- Ajout PyPy ---
-PYPY_PATH = r"C:\Users\matth\Downloads\pypy3.11-v7.3.20-win64\pypy3.11-v7.3.20-win64\pypy3.exe"
+PYPY_PATH = r".\pypy3.11-v7.3.20-win64\pypy3.exe"
 out_pypy = run(f"\"{PYPY_PATH}\" pypy_runner.py")
 
 # --- Extraction automatique des valeurs ---
