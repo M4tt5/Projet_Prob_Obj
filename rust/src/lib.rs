@@ -1,6 +1,5 @@
 use pyo3::prelude::*;
-use ndarray::Array1;
-use ndarray_npy::read_npy;
+use numpy::PyArray1;
 
 #[pyfunction]
 fn compute(n: usize) -> f64 {
@@ -12,15 +11,9 @@ fn compute(n: usize) -> f64 {
 }
 
 #[pyfunction]
-fn sum_squares(path: String) -> PyResult<f64> {
-    // Charge directement arr.npy
-    let arr: Array1<f64> = read_npy(path).unwrap();
-
-    let mut s = 0.0;
-    for v in arr.iter() {
-        s += v * v;
-    }
-    Ok(s)
+fn sum_squares(arr: &PyArray1<f64>) -> f64 {
+    let slice = unsafe { arr.as_slice().unwrap() };
+    slice.iter().map(|x| x * x).sum()
 }
 
 fn fib_rec(n: i32) -> i32 {
