@@ -62,18 +62,6 @@ Cython:
 cd cython_module
 python test_cython_runner.py
 
-## Tracer le graphique
-Retourner a la racine du projet (sortir de cython_module) puis:
-python plot_results.py
-
-
-
-
-
-
-
-
-
 ## Installation et utilisation du module Rust avec Python
 Rust (avec cargo):
 Installer depuis https://rustup.rs/
@@ -87,3 +75,7 @@ Important : faire cela depuis le CMD, pas PowerShell, pour éviter des erreurs d
 Se placer dans le dossier rust : cd rust
 
 Lancer maturin develop pour compiler et installer le module dans le venv : maturin develop --release
+
+## Tracer le graphique
+Retourner a la racine du projet (sortir de cython_module) puis:
+python plot_results.py
