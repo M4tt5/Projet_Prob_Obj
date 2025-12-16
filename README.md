@@ -1,4 +1,4 @@
-# Projet_Prob_Obj
+# Projet_Python_and_its_optimisation
 
 ## Installer Python 3.12.x
 Necessaire pour la suite et bien verifir qu'il est pris en compte
